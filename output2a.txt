@@ -1,0 +1,1654 @@
+Number of URLs to filter out: 6
+
+Input display:
+mySetOfURLs: 28
+https://en.wikipedia.org/wiki/Audio_signal: 2
+https://en.wikipedia.org/wiki/Document_management_system: 1
+https://en.wikipedia.org/wiki/Domain_name: 1
+https://en.wikipedia.org/wiki/Formatted_text: 1
+https://en.wikipedia.org/wiki/HTML: 1
+https://en.wikipedia.org/wiki/Hyperlink: 1
+https://en.wikipedia.org/wiki/Hypertext: 1
+https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol: 1
+https://en.wikipedia.org/wiki/Image: 2
+https://en.wikipedia.org/wiki/Internet: 1
+https://en.wikipedia.org/wiki/Multimedia: 1
+https://en.wikipedia.org/wiki/Plain_text: 2
+https://en.wikipedia.org/wiki/Software_application: 1
+https://en.wikipedia.org/wiki/User_computing: 1
+https://en.wikipedia.org/wiki/User-generated_content: 1
+https://en.wikipedia.org/wiki/Video: 2
+https://en.wikipedia.org/wiki/Website: 1
+https://en.wikipedia.org/wiki/Web_browser: 1
+https://en.wikipedia.org/wiki/Web_navigation: 1
+https://en.wikipedia.org/wiki/Web_page: 1
+https://en.wikipedia.org/wiki/Web_platform: 1
+https://en.wikipedia.org/wiki/Web_server: 2
+https://www.cyberattacks.com: 1
+https://www.dangerous-website.com: 1
+https://www.dos.com: 1
+https://www.fraudster.com: 1
+https://www.malware.com: 1
+https://www.phishing.com: 2
+
+mySetOfURLs - Sorted based on frequency:
+mySetOfURLs: 28
+https://en.wikipedia.org/wiki/Document_management_system: 1
+https://en.wikipedia.org/wiki/Domain_name: 1
+https://en.wikipedia.org/wiki/Formatted_text: 1
+https://en.wikipedia.org/wiki/HTML: 1
+https://en.wikipedia.org/wiki/Hyperlink: 1
+https://en.wikipedia.org/wiki/Hypertext: 1
+https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol: 1
+https://en.wikipedia.org/wiki/Internet: 1
+https://en.wikipedia.org/wiki/Multimedia: 1
+https://en.wikipedia.org/wiki/Software_application: 1
+https://en.wikipedia.org/wiki/User_computing: 1
+https://en.wikipedia.org/wiki/User-generated_content: 1
+https://en.wikipedia.org/wiki/Website: 1
+https://en.wikipedia.org/wiki/Web_browser: 1
+https://en.wikipedia.org/wiki/Web_navigation: 1
+https://en.wikipedia.org/wiki/Web_page: 1
+https://en.wikipedia.org/wiki/Web_platform: 1
+https://www.cyberattacks.com: 1
+https://www.dangerous-website.com: 1
+https://www.dos.com: 1
+https://www.fraudster.com: 1
+https://www.malware.com: 1
+https://en.wikipedia.org/wiki/Audio_signal: 2
+https://en.wikipedia.org/wiki/Image: 2
+https://en.wikipedia.org/wiki/Plain_text: 2
+https://en.wikipedia.org/wiki/Video: 2
+https://en.wikipedia.org/wiki/Web_server: 2
+https://www.phishing.com: 2
+
+mySetOfURLs - Sorted alphabetically:
+mySetOfURLs: 28
+https://en.wikipedia.org/wiki/Audio_signal: 2
+https://en.wikipedia.org/wiki/Document_management_system: 1
+https://en.wikipedia.org/wiki/Domain_name: 1
+https://en.wikipedia.org/wiki/Formatted_text: 1
+https://en.wikipedia.org/wiki/HTML: 1
+https://en.wikipedia.org/wiki/Hyperlink: 1
+https://en.wikipedia.org/wiki/Hypertext: 1
+https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol: 1
+https://en.wikipedia.org/wiki/Image: 2
+https://en.wikipedia.org/wiki/Internet: 1
+https://en.wikipedia.org/wiki/Multimedia: 1
+https://en.wikipedia.org/wiki/Plain_text: 2
+https://en.wikipedia.org/wiki/Software_application: 1
+https://en.wikipedia.org/wiki/User_computing: 1
+https://en.wikipedia.org/wiki/User-generated_content: 1
+https://en.wikipedia.org/wiki/Video: 2
+https://en.wikipedia.org/wiki/Website: 1
+https://en.wikipedia.org/wiki/Web_browser: 1
+https://en.wikipedia.org/wiki/Web_navigation: 1
+https://en.wikipedia.org/wiki/Web_page: 1
+https://en.wikipedia.org/wiki/Web_platform: 1
+https://en.wikipedia.org/wiki/Web_server: 2
+https://www.cyberattacks.com: 1
+https://www.dangerous-website.com: 1
+https://www.dos.com: 1
+https://www.fraudster.com: 1
+https://www.malware.com: 1
+https://www.phishing.com: 2
+
+
+newSetOfURLs - Sorted alphabetically:
+newSetOfURLs: 22
+https://en.wikipedia.org/wiki/Audio_signal: 2
+https://en.wikipedia.org/wiki/Document_management_system: 1
+https://en.wikipedia.org/wiki/Domain_name: 1
+https://en.wikipedia.org/wiki/Formatted_text: 1
+https://en.wikipedia.org/wiki/HTML: 1
+https://en.wikipedia.org/wiki/Hyperlink: 1
+https://en.wikipedia.org/wiki/Hypertext: 1
+https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol: 1
+https://en.wikipedia.org/wiki/Image: 2
+https://en.wikipedia.org/wiki/Internet: 1
+https://en.wikipedia.org/wiki/Multimedia: 1
+https://en.wikipedia.org/wiki/Plain_text: 2
+https://en.wikipedia.org/wiki/Software_application: 1
+https://en.wikipedia.org/wiki/User_computing: 1
+https://en.wikipedia.org/wiki/User-generated_content: 1
+https://en.wikipedia.org/wiki/Video: 2
+https://en.wikipedia.org/wiki/Website: 1
+https://en.wikipedia.org/wiki/Web_browser: 1
+https://en.wikipedia.org/wiki/Web_navigation: 1
+https://en.wikipedia.org/wiki/Web_page: 1
+https://en.wikipedia.org/wiki/Web_platform: 1
+https://en.wikipedia.org/wiki/Web_server: 2
+
+
+newSetOfURLs - Sorted based on frequency:
+newSetOfURLs: 22
+https://en.wikipedia.org/wiki/Document_management_system: 1
+https://en.wikipedia.org/wiki/Domain_name: 1
+https://en.wikipedia.org/wiki/Formatted_text: 1
+https://en.wikipedia.org/wiki/HTML: 1
+https://en.wikipedia.org/wiki/Hyperlink: 1
+https://en.wikipedia.org/wiki/Hypertext: 1
+https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol: 1
+https://en.wikipedia.org/wiki/Internet: 1
+https://en.wikipedia.org/wiki/Multimedia: 1
+https://en.wikipedia.org/wiki/Software_application: 1
+https://en.wikipedia.org/wiki/User_computing: 1
+https://en.wikipedia.org/wiki/User-generated_content: 1
+https://en.wikipedia.org/wiki/Website: 1
+https://en.wikipedia.org/wiki/Web_browser: 1
+https://en.wikipedia.org/wiki/Web_navigation: 1
+https://en.wikipedia.org/wiki/Web_page: 1
+https://en.wikipedia.org/wiki/Web_platform: 1
+https://en.wikipedia.org/wiki/Audio_signal: 2
+https://en.wikipedia.org/wiki/Image: 2
+https://en.wikipedia.org/wiki/Plain_text: 2
+https://en.wikipedia.org/wiki/Video: 2
+https://en.wikipedia.org/wiki/Web_server: 2
+
+Number of webpages: 100
+
+~~~Webpages and the links they contain:
+
+https://en.wikipedia.org: 
+** https://usatoday.com
+** https://cnn.com
+** https://apartments.com
+** https://fedex.com
+
+https://youtube.com: 
+** https://ca.gov
+** https://ign.com
+
+https://amazon.com: 
+** https://nbcnews.com
+
+https://facebook.com: 
+** https://amazon.com
+
+https://twitter.com: 
+** https://investopedia.com
+** https://businessinsider.com
+** https://cdc.gov
+** https://glassdoor.com
+** https://espn.com
+** https://expedia.com
+** https://businessinsider.com
+** https://healthline.com
+** https://cnet.com
+
+https://fandom.com: 
+** https://bestbuy.com
+** https://xfinity.com
+
+https://pinterest.com: 
+** https://urbandictionary.com
+** https://microsoft.com
+** https://apple.com
+** https://amazon.com
+** https://yellowpages.com
+** https://en.wikipedia.org
+** https://expedia.com
+** https://quora.com
+** https://costco.com
+
+https://imdb.com: 
+** https://linkedin.com
+** https://theguardian.com
+** https://pinterest.com
+
+https://reddit.com: 
+** https://att.com
+** https://quizlet.com
+** https://twitch.tv
+** https://medicalnewstoday.com
+** https://yellowpages.com
+** https://google.com
+
+https://yelp.com: 
+** https://target.com
+** https://realtor.com
+** https://zillow.com
+** https://dictionary.com
+
+https://instagram.com: 
+** https://nih.gov
+** https://verizon.com
+** https://pinterest.com
+** https://amazon.com
+** https://realtor.com
+** https://msn.com
+** https://usatoday.com
+** https://fandom.com
+** https://fandom.com
+** https://amazon.com
+
+https://ebay.com: 
+** https://paypal.com
+** https://nytimes.com
+
+https://walmart.com: 
+** https://yelp.com
+** https://theguardian.com
+** https://bulbagarden.net
+** https://usps.com
+
+https://craigslist.org: 
+** https://merriam-webster.com
+** https://quizlet.com
+** https://instagram.com
+
+https://healthline.com: 
+** https://bankofamerica.com
+** https://healthline.com
+** https://investopedia.com
+** https://ign.com
+** https://target.com
+** https://aol.com
+
+https://tripadvisor.com: 
+** https://homedepot.com
+** https://quizlet.com
+** https://zillow.com
+
+https://linkedin.com: 
+** https://cbssports.com
+** https://etsy.com
+** https://cnet.com
+** https://cnbc.com
+** https://merriam-webster.com
+** https://merriam-webster.com
+** https://att.com
+** https://zillow.com
+** https://zillow.com
+** https://webmd.com
+
+https://webmd.com: 
+** https://dictionary.com
+** https://finance.yahoo.com
+** https://att.com
+** https://twitter.com
+** https://allrecipes.com
+** https://bbc.com
+** https://medicalnewstoday.com
+** https://macys.com
+** https://chase.com
+
+https://netflix.com: 
+** https://quora.com
+** https://urbandictionary.com
+** https://yahoo.com
+** https://facebook.com
+** https://costco.com
+** https://yelp.com
+** https://walmart.com
+
+https://apple.com: 
+** https://wowhead.com
+** https://espn.com
+** https://play.google.com
+** https://netflix.com
+** https://genius.com
+** https://apple.com
+** https://instagram.com
+** https://bankofamerica.com
+
+https://homedepot.com: 
+** https://tripadvisor.com
+** https://ign.com
+** https://apple.com
+** https://wowhead.com
+** https://healthline.com
+** https://imdb.com
+** https://finance.yahoo.com
+** https://hulu.com
+
+https://mail.yahoo.com: 
+** https://finance.yahoo.com
+** https://investopedia.com
+** https://live.com
+** https://bankofamerica.com
+** https://ebay.com
+** https://expedia.com
+
+https://cnn.com: 
+** https://businessinsider.com
+** https://fedex.com
+** https://yahoo.com
+** https://en.wikipedia.org
+** https://foxnews.com
+** https://foodnetwork.com
+** https://cnet.com
+** https://businessinsider.com
+** https://google.com
+
+https://etsy.com: 
+** https://twitch.tv
+
+https://google.com: 
+** https://ca.gov
+** https://twitter.com
+
+https://yahoo.com: 
+** https://craigslist.org
+
+https://indeed.com: 
+** https://quizlet.com
+** https://craigslist.org
+** https://live.com
+** https://msn.com
+** https://youtube.com
+** https://google.com
+** https://microsoft.com
+** https://foodnetwork.com
+** https://usnews.com
+** https://apple.com
+
+https://target.com: 
+** https://verizon.com
+** https://fedex.com
+** https://en.wikipedia.org
+** https://foodnetwork.com
+** https://apartments.com
+
+https://microsoft.com: 
+** https://yahoo.com
+
+https://nytimes.com: 
+** https://msn.com
+** https://healthline.com
+** https://youtube.com
+** https://costco.com
+** https://yahoo.com
+** https://play.google.com
+
+https://mayoclinic.org: 
+** https://forbes.com
+** https://chase.com
+** https://netflix.com
+** https://walmart.com
+** https://netflix.com
+** https://foxnews.com
+** https://businessinsider.com
+
+https://espn.com: 
+** https://adobe.com
+** https://glassdoor.com
+** https://weather.com
+** https://forbes.com
+** https://ny.gov
+
+https://usps.com: 
+** https://steampowered.com
+
+https://quizlet.com: 
+** https://glassdoor.com
+** https://spotify.com
+** https://lowes.com
+** https://yellowpages.com
+** https://cdc.gov
+
+https://gamepedia.com: 
+** https://ign.com
+** https://youtube.com
+** https://irs.gov
+** https://genius.com
+** https://foxnews.com
+** https://instagram.com
+
+https://lowes.com: 
+** https://britannica.com
+** https://zillow.com
+
+https://irs.gov: 
+** https://twitter.com
+** https://netflix.com
+** https://amazon.com
+** https://foxnews.com
+** https://quizlet.com
+** https://dictionary.com
+** https://bbc.com
+** https://indeed.com
+** https://cnn.com
+
+https://nih.gov: 
+** https://glassdoor.com
+** https://twitter.com
+** https://youtube.com
+** https://ign.com
+
+https://merriam-webster.com: 
+** https://yelp.com
+** https://mapquest.com
+** https://netflix.com
+** https://cnbc.com
+
+https://steampowered.com: 
+** https://forbes.com
+** https://finance.yahoo.com
+** https://twitch.tv
+** https://live.com
+** https://facebook.com
+** https://amazon.com
+** https://youtube.com
+** https://medicalnewstoday.com
+** https://spotify.com
+** https://adobe.com
+
+https://mapquest.com: 
+** https://twitch.tv
+** https://facebook.com
+** https://costco.com
+** https://costco.com
+** https://espn.com
+** https://businessinsider.com
+
+https://foxnews.com: 
+** https://dictionary.com
+** https://pinterest.com
+** https://mapquest.com
+
+https://allrecipes.com: 
+** https://aol.com
+** https://expedia.com
+** https://netflix.com
+** https://target.com
+** https://bbc.com
+** https://khanacademy.org
+
+https://quora.com: 
+** https://wowhead.com
+** https://youtube.com
+** https://en.wikipedia.org
+** https://en.wikipedia.org
+** https://aol.com
+** https://nytimes.com
+** https://foodnetwork.com
+** https://target.com
+** https://ups.com
+
+https://aol.com: 
+** https://nih.gov
+** https://paypal.com
+** https://ca.gov
+** https://netflix.com
+** https://bbc.com
+** https://theguardian.com
+** https://gamepedia.com
+** https://quora.com
+** https://ca.gov
+** https://khanacademy.org
+
+https://britannica.com: 
+** https://webmd.com
+** https://foodnetwork.com
+** https://cnbc.com
+** https://netflix.com
+** https://bbc.com
+** https://cnet.com
+
+https://live.com: 
+** https://instagram.com
+** https://merriam-webster.com
+** https://genius.com
+** https://walmart.com
+** https://khanacademy.org
+** https://usatoday.com
+** https://nytimes.com
+** https://target.com
+
+https://bestbuy.com: 
+** https://cbssports.com
+** https://forbes.com
+** https://fandom.com
+
+https://rottentomatoes.com: 
+** https://reddit.com
+
+https://ca.gov: 
+** https://investopedia.com
+** https://rottentomatoes.com
+** https://mail.yahoo.com
+** https://walmart.com
+** https://costco.com
+** https://speedtest.net
+** https://usatoday.com
+
+https://play.google.com: 
+** https://khanacademy.org
+** https://spotify.com
+** https://aol.com
+** https://ny.gov
+
+https://cnet.com: 
+** https://ups.com
+** https://imdb.com
+** https://gamepedia.com
+** https://homedepot.com
+
+https://roblox.com: 
+** https://britannica.com
+** https://finance.yahoo.com
+** https://cbssports.com
+** https://usatoday.com
+** https://indeed.com
+** https://bestbuy.com
+** https://lowes.com
+
+https://usnews.com: 
+** https://yahoo.com
+** https://att.com
+** https://mapquest.com
+** https://adobe.com
+** https://msn.com
+** https://cnbc.com
+** https://adobe.com
+** https://google.com
+** https://khanacademy.org
+** https://zillow.com
+
+https://zillow.com: 
+** https://tripadvisor.com
+** https://pinterest.com
+** https://glassdoor.com
+
+https://businessinsider.com: 
+** https://play.google.com
+** https://microsoft.com
+** https://facebook.com
+
+https://bulbagarden.net: 
+** https://gamepedia.com
+** https://dictionary.com
+** https://ebay.com
+** https://cdc.gov
+** https://webmd.com
+** https://fandom.com
+** https://ign.com
+** https://merriam-webster.com
+** https://walmart.com
+
+https://paypal.com: 
+** https://mayoclinic.org
+** https://att.com
+** https://foxnews.com
+** https://ny.gov
+** https://paypal.com
+** https://genius.com
+** https://lowes.com
+** https://ny.gov
+** https://businessinsider.com
+** https://usatoday.com
+
+https://finance.yahoo.com: 
+** https://ny.gov
+** https://nbcnews.com
+** https://verizon.com
+** https://apartments.com
+** https://espn.com
+** https://wowhead.com
+** https://youtube.com
+** https://adobe.com
+** https://wowhead.com
+
+https://genius.com: 
+** https://imdb.com
+** https://espn.com
+** https://usatoday.com
+** https://costco.com
+** https://indeed.com
+** https://target.com
+** https://weather.com
+
+https://usatoday.com: 
+** https://bestbuy.com
+** https://urbandictionary.com
+** https://play.google.com
+** https://tripadvisor.com
+** https://britannica.com
+** https://washingtonpost.com
+** https://nih.gov
+** https://mapquest.com
+
+https://realtor.com: 
+** https://yelp.com
+** https://paypal.com
+** https://live.com
+** https://play.google.com
+** https://paypal.com
+** https://yahoo.com
+** https://nbcnews.com
+** https://en.wikipedia.org
+** https://finance.yahoo.com
+** https://investopedia.com
+
+https://medicalnewstoday.com: 
+** https://walmart.com
+
+https://fedex.com: 
+** https://lowes.com
+
+https://bankofamerica.com: 
+** https://expedia.com
+
+https://washingtonpost.com: 
+** https://rottentomatoes.com
+** https://target.com
+** https://urbandictionary.com
+** https://costco.com
+** https://bulbagarden.net
+** https://indeed.com
+** https://nytimes.com
+** https://cdc.gov
+** https://tripadvisor.com
+** https://glassdoor.com
+
+https://investopedia.com: 
+** https://play.google.com
+** https://paypal.com
+
+https://speedtest.net: 
+** https://merriam-webster.com
+** https://en.wikipedia.org
+** https://foodnetwork.com
+** https://washingtonpost.com
+** https://imdb.com
+** https://nih.gov
+** https://aol.com
+** https://usatoday.com
+** https://apartments.com
+** https://rottentomatoes.com
+
+https://spotify.com: 
+** https://ebay.com
+** https://ny.gov
+** https://chase.com
+** https://urbandictionary.com
+** https://speedtest.net
+** https://ebay.com
+** https://steampowered.com
+** https://apple.com
+** https://usatoday.com
+** https://quora.com
+
+https://cdc.gov: 
+** https://speedtest.net
+** https://verizon.com
+** https://quora.com
+** https://quora.com
+** https://yahoo.com
+** https://netflix.com
+** https://bulbagarden.net
+** https://youtube.com
+** https://verizon.com
+** https://linkedin.com
+
+https://chase.com: 
+** https://mapquest.com
+** https://play.google.com
+
+https://hulu.com: 
+** https://pinterest.com
+** https://mapquest.com
+** https://usps.com
+
+https://xfinity.com: 
+** https://indeed.com
+** https://capitalone.com
+** https://nbcnews.com
+** https://linkedin.com
+** https://bbc.com
+** https://indeed.com
+** https://washingtonpost.com
+** https://usnews.com
+** https://bankofamerica.com
+** https://ebay.com
+
+https://msn.com: 
+** https://usps.com
+** https://webmd.com
+** https://bankofamerica.com
+** https://usps.com
+** https://capitalone.com
+** https://craigslist.org
+** https://businessinsider.com
+** https://facebook.com
+** https://fandom.com
+
+https://dictionary.com: 
+** https://target.com
+** https://nih.gov
+** https://spotify.com
+** https://netflix.com
+** https://quizlet.com
+** https://bestbuy.com
+** https://roblox.com
+** https://lowes.com
+** https://chase.com
+** https://foxnews.com
+
+https://weather.com: 
+** https://live.com
+** https://macys.com
+** https://cnet.com
+** https://en.wikipedia.org
+** https://webmd.com
+** https://wowhead.com
+** https://ebay.com
+
+https://ups.com: 
+** https://quizlet.com
+** https://cbssports.com
+
+https://verizon.com: 
+** https://khanacademy.org
+
+https://forbes.com: 
+** https://usps.com
+
+https://wowhead.com: 
+** https://instagram.com
+** https://linkedin.com
+** https://twitch.tv
+** https://imdb.com
+** https://costco.com
+** https://fandom.com
+** https://britannica.com
+** https://quora.com
+** https://xfinity.com
+
+https://expedia.com: 
+** https://bbc.com
+** https://lowes.com
+** https://gamepedia.com
+** https://ny.gov
+** https://dictionary.com
+** https://espn.com
+** https://aol.com
+
+https://urbandictionary.com: 
+** https://en.wikipedia.org
+** https://twitter.com
+** https://indeed.com
+** https://quora.com
+** https://fedex.com
+** https://bestbuy.com
+** https://britannica.com
+** https://medicalnewstoday.com
+** https://foxnews.com
+** https://usps.com
+
+https://foodnetwork.com: 
+** https://mapquest.com
+** https://apple.com
+** https://allrecipes.com
+** https://expedia.com
+
+https://nbcnews.com: 
+** https://fandom.com
+** https://merriam-webster.com
+
+https://macys.com: 
+** https://walmart.com
+** https://ign.com
+** https://espn.com
+** https://realtor.com
+** https://spotify.com
+** https://ny.gov
+
+https://apartments.com: 
+** https://healthline.com
+** https://aol.com
+
+https://ign.com: 
+** https://microsoft.com
+** https://lowes.com
+** https://nih.gov
+** https://steampowered.com
+** https://microsoft.com
+** https://apartments.com
+** https://ca.gov
+** https://nytimes.com
+** https://microsoft.com
+
+https://capitalone.com: 
+** https://urbandictionary.com
+** https://homedepot.com
+** https://gamepedia.com
+** https://fandom.com
+** https://nih.gov
+
+https://costco.com: 
+** https://facebook.com
+** https://bestbuy.com
+** https://att.com
+
+https://theguardian.com: 
+** https://bankofamerica.com
+** https://usnews.com
+** https://fedex.com
+** https://ebay.com
+** https://healthline.com
+** https://khanacademy.org
+
+https://cnbc.com: 
+** https://yelp.com
+** https://mail.yahoo.com
+** https://chase.com
+** https://macys.com
+** https://chase.com
+
+https://glassdoor.com: 
+** https://cnbc.com
+** https://usps.com
+** https://homedepot.com
+** https://allrecipes.com
+** https://khanacademy.org
+** https://reddit.com
+
+https://yellowpages.com: 
+** https://chase.com
+** https://genius.com
+
+https://att.com: 
+** https://dictionary.com
+** https://play.google.com
+** https://reddit.com
+** https://irs.gov
+** https://forbes.com
+** https://glassdoor.com
+
+https://bbc.com: 
+** https://mayoclinic.org
+** https://mail.yahoo.com
+** https://zillow.com
+** https://quora.com
+** https://reddit.com
+
+https://khanacademy.org: 
+** https://speedtest.net
+** https://craigslist.org
+** https://chase.com
+** https://realtor.com
+** https://ca.gov
+** https://twitch.tv
+** https://ups.com
+** https://craigslist.org
+
+https://ny.gov: 
+** https://linkedin.com
+** https://quora.com
+** https://usatoday.com
+** https://espn.com
+** https://steampowered.com
+** https://espn.com
+** https://steampowered.com
+
+https://twitch.tv: 
+** https://theguardian.com
+** https://cbssports.com
+** https://usnews.com
+** https://netflix.com
+** https://macys.com
+** https://bulbagarden.net
+
+https://adobe.com: 
+** https://live.com
+** https://ca.gov
+** https://irs.gov
+
+https://cbssports.com: 
+** https://youtube.com
+
+
+~~~Webpages and the number and URL of pages that contain links to them:
+
+https://en.wikipedia.org: 9
+** https://pinterest.com
+** https://cnn.com
+** https://target.com
+** https://quora.com
+** https://quora.com
+** https://realtor.com
+** https://speedtest.net
+** https://weather.com
+** https://urbandictionary.com
+
+https://youtube.com: 9
+** https://indeed.com
+** https://nytimes.com
+** https://gamepedia.com
+** https://nih.gov
+** https://steampowered.com
+** https://quora.com
+** https://finance.yahoo.com
+** https://cdc.gov
+** https://cbssports.com
+
+https://amazon.com: 6
+** https://facebook.com
+** https://pinterest.com
+** https://instagram.com
+** https://instagram.com
+** https://irs.gov
+** https://steampowered.com
+
+https://facebook.com: 6
+** https://netflix.com
+** https://steampowered.com
+** https://mapquest.com
+** https://businessinsider.com
+** https://msn.com
+** https://costco.com
+
+https://twitter.com: 5
+** https://webmd.com
+** https://google.com
+** https://irs.gov
+** https://nih.gov
+** https://urbandictionary.com
+
+https://fandom.com: 8
+** https://instagram.com
+** https://instagram.com
+** https://bestbuy.com
+** https://bulbagarden.net
+** https://msn.com
+** https://wowhead.com
+** https://nbcnews.com
+** https://capitalone.com
+
+https://pinterest.com: 5
+** https://imdb.com
+** https://instagram.com
+** https://foxnews.com
+** https://zillow.com
+** https://hulu.com
+
+https://imdb.com: 5
+** https://homedepot.com
+** https://cnet.com
+** https://genius.com
+** https://speedtest.net
+** https://wowhead.com
+
+https://reddit.com: 4
+** https://rottentomatoes.com
+** https://glassdoor.com
+** https://att.com
+** https://bbc.com
+
+https://yelp.com: 5
+** https://walmart.com
+** https://netflix.com
+** https://merriam-webster.com
+** https://realtor.com
+** https://cnbc.com
+
+https://instagram.com: 5
+** https://craigslist.org
+** https://apple.com
+** https://gamepedia.com
+** https://live.com
+** https://wowhead.com
+
+https://ebay.com: 7
+** https://mail.yahoo.com
+** https://bulbagarden.net
+** https://spotify.com
+** https://spotify.com
+** https://xfinity.com
+** https://weather.com
+** https://theguardian.com
+
+https://walmart.com: 7
+** https://netflix.com
+** https://mayoclinic.org
+** https://live.com
+** https://ca.gov
+** https://bulbagarden.net
+** https://medicalnewstoday.com
+** https://macys.com
+
+https://craigslist.org: 5
+** https://yahoo.com
+** https://indeed.com
+** https://msn.com
+** https://khanacademy.org
+** https://khanacademy.org
+
+https://healthline.com: 6
+** https://twitter.com
+** https://healthline.com
+** https://homedepot.com
+** https://nytimes.com
+** https://apartments.com
+** https://theguardian.com
+
+https://tripadvisor.com: 4
+** https://homedepot.com
+** https://zillow.com
+** https://usatoday.com
+** https://washingtonpost.com
+
+https://linkedin.com: 5
+** https://imdb.com
+** https://cdc.gov
+** https://xfinity.com
+** https://wowhead.com
+** https://ny.gov
+
+https://webmd.com: 5
+** https://linkedin.com
+** https://britannica.com
+** https://bulbagarden.net
+** https://msn.com
+** https://weather.com
+
+https://netflix.com: 11
+** https://apple.com
+** https://mayoclinic.org
+** https://mayoclinic.org
+** https://irs.gov
+** https://merriam-webster.com
+** https://allrecipes.com
+** https://aol.com
+** https://britannica.com
+** https://cdc.gov
+** https://dictionary.com
+** https://twitch.tv
+
+https://apple.com: 6
+** https://pinterest.com
+** https://apple.com
+** https://homedepot.com
+** https://indeed.com
+** https://spotify.com
+** https://foodnetwork.com
+
+https://homedepot.com: 4
+** https://tripadvisor.com
+** https://cnet.com
+** https://capitalone.com
+** https://glassdoor.com
+
+https://mail.yahoo.com: 3
+** https://ca.gov
+** https://cnbc.com
+** https://bbc.com
+
+https://cnn.com: 2
+** https://en.wikipedia.org
+** https://irs.gov
+
+https://etsy.com: 1
+** https://linkedin.com
+
+https://google.com: 4
+** https://reddit.com
+** https://cnn.com
+** https://indeed.com
+** https://usnews.com
+
+https://yahoo.com: 7
+** https://netflix.com
+** https://cnn.com
+** https://microsoft.com
+** https://nytimes.com
+** https://usnews.com
+** https://realtor.com
+** https://cdc.gov
+
+https://indeed.com: 7
+** https://irs.gov
+** https://roblox.com
+** https://genius.com
+** https://washingtonpost.com
+** https://xfinity.com
+** https://xfinity.com
+** https://urbandictionary.com
+
+https://target.com: 8
+** https://yelp.com
+** https://healthline.com
+** https://allrecipes.com
+** https://quora.com
+** https://live.com
+** https://genius.com
+** https://washingtonpost.com
+** https://dictionary.com
+
+https://microsoft.com: 6
+** https://pinterest.com
+** https://indeed.com
+** https://businessinsider.com
+** https://ign.com
+** https://ign.com
+** https://ign.com
+
+https://nytimes.com: 5
+** https://ebay.com
+** https://quora.com
+** https://live.com
+** https://washingtonpost.com
+** https://ign.com
+
+https://mayoclinic.org: 2
+** https://paypal.com
+** https://bbc.com
+
+https://espn.com: 9
+** https://twitter.com
+** https://apple.com
+** https://mapquest.com
+** https://finance.yahoo.com
+** https://genius.com
+** https://expedia.com
+** https://macys.com
+** https://ny.gov
+** https://ny.gov
+
+https://usps.com: 7
+** https://walmart.com
+** https://hulu.com
+** https://msn.com
+** https://msn.com
+** https://forbes.com
+** https://urbandictionary.com
+** https://glassdoor.com
+
+https://quizlet.com: 7
+** https://reddit.com
+** https://craigslist.org
+** https://tripadvisor.com
+** https://indeed.com
+** https://irs.gov
+** https://dictionary.com
+** https://ups.com
+
+https://gamepedia.com: 5
+** https://aol.com
+** https://cnet.com
+** https://bulbagarden.net
+** https://expedia.com
+** https://capitalone.com
+
+https://lowes.com: 7
+** https://quizlet.com
+** https://roblox.com
+** https://paypal.com
+** https://fedex.com
+** https://dictionary.com
+** https://expedia.com
+** https://ign.com
+
+https://irs.gov: 3
+** https://gamepedia.com
+** https://att.com
+** https://adobe.com
+
+https://nih.gov: 7
+** https://instagram.com
+** https://aol.com
+** https://usatoday.com
+** https://speedtest.net
+** https://dictionary.com
+** https://ign.com
+** https://capitalone.com
+
+https://merriam-webster.com: 7
+** https://craigslist.org
+** https://linkedin.com
+** https://linkedin.com
+** https://live.com
+** https://bulbagarden.net
+** https://speedtest.net
+** https://nbcnews.com
+
+https://steampowered.com: 5
+** https://usps.com
+** https://spotify.com
+** https://ign.com
+** https://ny.gov
+** https://ny.gov
+
+https://mapquest.com: 7
+** https://merriam-webster.com
+** https://foxnews.com
+** https://usnews.com
+** https://usatoday.com
+** https://chase.com
+** https://hulu.com
+** https://foodnetwork.com
+
+https://foxnews.com: 7
+** https://cnn.com
+** https://mayoclinic.org
+** https://gamepedia.com
+** https://irs.gov
+** https://paypal.com
+** https://dictionary.com
+** https://urbandictionary.com
+
+https://allrecipes.com: 3
+** https://webmd.com
+** https://foodnetwork.com
+** https://glassdoor.com
+
+https://quora.com: 10
+** https://pinterest.com
+** https://netflix.com
+** https://aol.com
+** https://spotify.com
+** https://cdc.gov
+** https://cdc.gov
+** https://wowhead.com
+** https://urbandictionary.com
+** https://bbc.com
+** https://ny.gov
+
+https://aol.com: 7
+** https://healthline.com
+** https://allrecipes.com
+** https://quora.com
+** https://play.google.com
+** https://speedtest.net
+** https://expedia.com
+** https://apartments.com
+
+https://britannica.com: 5
+** https://lowes.com
+** https://roblox.com
+** https://usatoday.com
+** https://wowhead.com
+** https://urbandictionary.com
+
+https://live.com: 6
+** https://mail.yahoo.com
+** https://indeed.com
+** https://steampowered.com
+** https://realtor.com
+** https://weather.com
+** https://adobe.com
+
+https://bestbuy.com: 6
+** https://fandom.com
+** https://roblox.com
+** https://usatoday.com
+** https://dictionary.com
+** https://urbandictionary.com
+** https://costco.com
+
+https://rottentomatoes.com: 3
+** https://ca.gov
+** https://washingtonpost.com
+** https://speedtest.net
+
+https://ca.gov: 7
+** https://youtube.com
+** https://google.com
+** https://aol.com
+** https://aol.com
+** https://ign.com
+** https://khanacademy.org
+** https://adobe.com
+
+https://play.google.com: 8
+** https://apple.com
+** https://nytimes.com
+** https://businessinsider.com
+** https://usatoday.com
+** https://realtor.com
+** https://investopedia.com
+** https://chase.com
+** https://att.com
+
+https://cnet.com: 5
+** https://twitter.com
+** https://linkedin.com
+** https://cnn.com
+** https://britannica.com
+** https://weather.com
+
+https://roblox.com: 1
+** https://dictionary.com
+
+https://usnews.com: 4
+** https://indeed.com
+** https://xfinity.com
+** https://theguardian.com
+** https://twitch.tv
+
+https://zillow.com: 7
+** https://yelp.com
+** https://tripadvisor.com
+** https://linkedin.com
+** https://linkedin.com
+** https://lowes.com
+** https://usnews.com
+** https://bbc.com
+
+https://businessinsider.com: 8
+** https://twitter.com
+** https://twitter.com
+** https://cnn.com
+** https://cnn.com
+** https://mayoclinic.org
+** https://mapquest.com
+** https://paypal.com
+** https://msn.com
+
+https://bulbagarden.net: 4
+** https://walmart.com
+** https://washingtonpost.com
+** https://cdc.gov
+** https://twitch.tv
+
+https://paypal.com: 6
+** https://ebay.com
+** https://aol.com
+** https://paypal.com
+** https://realtor.com
+** https://realtor.com
+** https://investopedia.com
+
+https://finance.yahoo.com: 6
+** https://webmd.com
+** https://homedepot.com
+** https://mail.yahoo.com
+** https://steampowered.com
+** https://roblox.com
+** https://realtor.com
+
+https://genius.com: 5
+** https://apple.com
+** https://gamepedia.com
+** https://live.com
+** https://paypal.com
+** https://yellowpages.com
+
+https://usatoday.com: 10
+** https://en.wikipedia.org
+** https://instagram.com
+** https://live.com
+** https://ca.gov
+** https://roblox.com
+** https://paypal.com
+** https://genius.com
+** https://speedtest.net
+** https://spotify.com
+** https://ny.gov
+
+https://realtor.com: 4
+** https://yelp.com
+** https://instagram.com
+** https://macys.com
+** https://khanacademy.org
+
+https://medicalnewstoday.com: 4
+** https://reddit.com
+** https://webmd.com
+** https://steampowered.com
+** https://urbandictionary.com
+
+https://fedex.com: 5
+** https://en.wikipedia.org
+** https://cnn.com
+** https://target.com
+** https://urbandictionary.com
+** https://theguardian.com
+
+https://bankofamerica.com: 6
+** https://healthline.com
+** https://apple.com
+** https://mail.yahoo.com
+** https://xfinity.com
+** https://msn.com
+** https://theguardian.com
+
+https://washingtonpost.com: 3
+** https://usatoday.com
+** https://speedtest.net
+** https://xfinity.com
+
+https://investopedia.com: 5
+** https://twitter.com
+** https://healthline.com
+** https://mail.yahoo.com
+** https://ca.gov
+** https://realtor.com
+
+https://speedtest.net: 4
+** https://ca.gov
+** https://spotify.com
+** https://cdc.gov
+** https://khanacademy.org
+
+https://spotify.com: 5
+** https://quizlet.com
+** https://steampowered.com
+** https://play.google.com
+** https://dictionary.com
+** https://macys.com
+
+https://cdc.gov: 4
+** https://twitter.com
+** https://quizlet.com
+** https://bulbagarden.net
+** https://washingtonpost.com
+
+https://chase.com: 8
+** https://webmd.com
+** https://mayoclinic.org
+** https://spotify.com
+** https://dictionary.com
+** https://cnbc.com
+** https://cnbc.com
+** https://yellowpages.com
+** https://khanacademy.org
+
+https://hulu.com: 1
+** https://homedepot.com
+
+https://xfinity.com: 2
+** https://fandom.com
+** https://wowhead.com
+
+https://msn.com: 4
+** https://instagram.com
+** https://indeed.com
+** https://nytimes.com
+** https://usnews.com
+
+https://dictionary.com: 7
+** https://yelp.com
+** https://webmd.com
+** https://irs.gov
+** https://foxnews.com
+** https://bulbagarden.net
+** https://expedia.com
+** https://att.com
+
+https://weather.com: 2
+** https://espn.com
+** https://genius.com
+
+https://ups.com: 3
+** https://quora.com
+** https://cnet.com
+** https://khanacademy.org
+
+https://verizon.com: 5
+** https://instagram.com
+** https://target.com
+** https://finance.yahoo.com
+** https://cdc.gov
+** https://cdc.gov
+
+https://forbes.com: 5
+** https://mayoclinic.org
+** https://espn.com
+** https://steampowered.com
+** https://bestbuy.com
+** https://att.com
+
+https://wowhead.com: 6
+** https://apple.com
+** https://homedepot.com
+** https://quora.com
+** https://finance.yahoo.com
+** https://finance.yahoo.com
+** https://weather.com
+
+https://expedia.com: 6
+** https://twitter.com
+** https://pinterest.com
+** https://mail.yahoo.com
+** https://allrecipes.com
+** https://bankofamerica.com
+** https://foodnetwork.com
+
+https://urbandictionary.com: 6
+** https://pinterest.com
+** https://netflix.com
+** https://usatoday.com
+** https://washingtonpost.com
+** https://spotify.com
+** https://capitalone.com
+
+https://foodnetwork.com: 6
+** https://cnn.com
+** https://indeed.com
+** https://target.com
+** https://quora.com
+** https://britannica.com
+** https://speedtest.net
+
+https://nbcnews.com: 4
+** https://amazon.com
+** https://finance.yahoo.com
+** https://realtor.com
+** https://xfinity.com
+
+https://macys.com: 4
+** https://webmd.com
+** https://weather.com
+** https://cnbc.com
+** https://twitch.tv
+
+https://apartments.com: 5
+** https://en.wikipedia.org
+** https://target.com
+** https://finance.yahoo.com
+** https://speedtest.net
+** https://ign.com
+
+https://ign.com: 7
+** https://youtube.com
+** https://healthline.com
+** https://homedepot.com
+** https://gamepedia.com
+** https://nih.gov
+** https://bulbagarden.net
+** https://macys.com
+
+https://capitalone.com: 2
+** https://xfinity.com
+** https://msn.com
+
+https://costco.com: 9
+** https://pinterest.com
+** https://netflix.com
+** https://nytimes.com
+** https://mapquest.com
+** https://mapquest.com
+** https://ca.gov
+** https://genius.com
+** https://washingtonpost.com
+** https://wowhead.com
+
+https://theguardian.com: 4
+** https://imdb.com
+** https://walmart.com
+** https://aol.com
+** https://twitch.tv
+
+https://cnbc.com: 5
+** https://linkedin.com
+** https://merriam-webster.com
+** https://britannica.com
+** https://usnews.com
+** https://glassdoor.com
+
+https://glassdoor.com: 7
+** https://twitter.com
+** https://espn.com
+** https://quizlet.com
+** https://nih.gov
+** https://zillow.com
+** https://washingtonpost.com
+** https://att.com
+
+https://yellowpages.com: 3
+** https://pinterest.com
+** https://reddit.com
+** https://quizlet.com
+
+https://att.com: 6
+** https://reddit.com
+** https://linkedin.com
+** https://webmd.com
+** https://usnews.com
+** https://paypal.com
+** https://costco.com
+
+https://bbc.com: 7
+** https://webmd.com
+** https://irs.gov
+** https://allrecipes.com
+** https://aol.com
+** https://britannica.com
+** https://xfinity.com
+** https://expedia.com
+
+https://khanacademy.org: 8
+** https://allrecipes.com
+** https://aol.com
+** https://live.com
+** https://play.google.com
+** https://usnews.com
+** https://verizon.com
+** https://theguardian.com
+** https://glassdoor.com
+
+https://ny.gov: 8
+** https://espn.com
+** https://play.google.com
+** https://paypal.com
+** https://paypal.com
+** https://finance.yahoo.com
+** https://spotify.com
+** https://expedia.com
+** https://macys.com
+
+https://twitch.tv: 6
+** https://reddit.com
+** https://etsy.com
+** https://steampowered.com
+** https://mapquest.com
+** https://wowhead.com
+** https://khanacademy.org
+
+https://adobe.com: 5
+** https://espn.com
+** https://steampowered.com
+** https://usnews.com
+** https://usnews.com
+** https://finance.yahoo.com
+
+https://cbssports.com: 5
+** https://linkedin.com
+** https://bestbuy.com
+** https://roblox.com
+** https://ups.com
+** https://twitch.tv
+
