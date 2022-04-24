@@ -24,11 +24,11 @@ int stringLength (char* A) {
 
 
 
+// #####################################################################################################################
 
+/*
 
-
-
-class myStringException : public exception{};
+*/
 
 class myString{
     friend ostream& operator << (ostream& s, myString& A);
@@ -52,17 +52,8 @@ class myString{
 
 // outputs a given string A
 ostream& operator << (ostream& s, myString& A) {
-    for(int i = 0; i < A.size; i ++){
-        s << A.strArray[i];
-    }
+    s << A.strArray;
 	return s;
-}
-
-void myString::strCpy(char* A, char* B, int n){
-    // this assumes A and B are both of length n.
-    for(int i = 0; i < n; i ++){
-        A[i] = B[i];
-    }
 }
 
 // default constructor
@@ -72,6 +63,7 @@ myString::myString () {
 	strArray[0] = '\0';
 }
 
+// constructor that uses a character array
 myString::myString(char* inputString){
     int i = 0;
 	while (inputString[i] != '\0')
@@ -83,25 +75,27 @@ myString::myString(char* inputString){
 		strArray[j] = inputString[j];
 }
 
+// copy constructor creates a new instance from an existing object
 myString::myString (myString& B) {
-	delete [] strArray;
-	strArray = NULL;
 	size = B.size;
 	strArray = new char[size];
 	emptyString(strArray, size+1);
 	stringCopy (B.strArray, size, strArray);
 }
 
+// returns the array containing the characters of the myString() instance.
 char* myString::getWord(){
     return strArray;
 }
 
+// returns the "length" of the string (size of array)
 int myString::Size(){
     return size;
 }
 
+// overloaded equality operator
 bool myString::operator == (myString& s){
-    // checking equal sizes is an easy first way to check.
+    // checking equal sizes to avoid unnecessary looping.
     if(this->size != s.Size()){
         return false;
     }
@@ -115,10 +109,13 @@ bool myString::operator == (myString& s){
     }
 }
 
+// overloaded greater than - uses relative ASCII values
 bool myString::operator > (myString& s){
+    // check for equality first
     if(*this == s){
         return false;
     }
+    // *this has larger size
     else if(this-> size >= s.size){
         for(int i = 0; i < s.size; i++){
             if(this->strArray[i] > s.strArray[i])
@@ -127,11 +124,11 @@ bool myString::operator > (myString& s){
                 return false;
         }
 
-        // from here, one word is longer and both words are equal up until that point. Let the longer word be greater than by definition.
+        // both words equal up to length of 's,' but *this is longer and therefore "greater than," by our definition
         return true;
     }
+    // s has larger size
     else{
-        // s has larger size
         for(int i = 0; i < this->size; i++){
             if(this->strArray[i] > s.strArray[i])
                 return true;
@@ -139,32 +136,44 @@ bool myString::operator > (myString& s){
                 return false;
         }
 
-        // both words equal up to the length of *this, but s is longer.
+        // both words equal up to length of *this, but 's' is longer and therefore "greater than," by our definition
         return false;
 
 
     }
 }
 
+// overloaded less than - uses relative ASCII values
 bool myString::operator < (myString& s){
+    // if not greater than or equal, must be less than.
     if(!(*this > s) && !(*this == s))
         return true;
     return false;
 }
 
+// overloaded assignment operator to perform deep copy
 myString& myString::operator = (myString& s){
-    strCpy(this->strArray, s.strArray, s.size);
+    delete [] strArray;
+    size = stringLength(s.strArray);
+    strArray = new char[size];
+    emptyString(strArray, size+1);
+    stringCopy(s.strArray, size, strArray);
     return *this;
 }
 
+// assignment operator for a character array resizes existing instance
 myString& myString::operator = (char* s){
-    strCpy(this->strArray, s, stringLength(s));
+    delete [] strArray;
+    size = stringLength(s);
+    strArray = new char[size];
+    emptyString(strArray, size+1);
+    stringCopy(s, size, strArray);
     return *this;
 }
 
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
+// #####################################################################################################################
 
 
 bool isValidURL(char* s, int size){
@@ -192,6 +201,13 @@ char* getNextURL () {
 	//read until the next white space or line-break 
 	while (!cin.eof()) {
 		cin.get(c);
+        if(c == '$'){ // this is how we recognize the '$$$$'
+            while(c == '$'){
+                cin.get(c);
+            }
+            cin.get(c); // read extra whitespace
+            return NULL;
+        }
 		if (!cin.eof ()) {
 			if ((c != '\n') && (c != ' ')) {
 				if ( ((c >= 'a') && (c <= 'z')) ||
@@ -200,20 +216,21 @@ char* getNextURL () {
 					 (c >= ':') || (c >= '/') || (c >= '.') || (c >= '_'))
 					str[i++] = c;
 			}
-			else if ((c == '\n') && (i > 0)){
+			else if ((c == '\n' || c == ' ') && (i > 0)){
                 if(isValidURL(str, i))
 				    return str;
                 else return getNextURL();
-            }
+            }/*
 			else if ((c == ' ') && (i > 0)){
                 if(isValidURL(str, i))
 				    return str;
                 else return getNextURL();
-            }
+            }*/
 		}
 	}
 	return NULL;
 }
+
 
 
 
@@ -225,8 +242,10 @@ class setOfURLs{
 
     private:
         int binarySearchAndInsert(myString& s);
+        void deleteURL(int i);
         void incCapacity();
         void decCapacity();
+        void urlSwap(int i, int j);
     
     protected:
         myString* _URLs;
@@ -296,8 +315,9 @@ void setOfURLs::setSize(int i)
 
 void setOfURLs::display()
 {
+    cout << "mySetOfURLs: " << _size << endl;
     for(int i = 0; i < _size; i ++){
-        cout << _URLs[i] << endl;
+        cout << _URLs[i] << ": " << _frequencies[i] << endl;
     }
 }
 
@@ -310,14 +330,11 @@ void setOfURLs::sortFreq()
     for(int i = 0; i < _size; i++){
         for(int j = 0; j < _size; j++){
             if(_frequencies[j] > _frequencies[i]){
-                temp_url = _URLs[i];
-                temp_f = _frequencies[i];
+                urlSwap(i, j);
+            }
 
-                _URLs[i] = _URLs[j];
-                _frequencies[i] = _frequencies[j];
-
-                _URLs[j] = temp_url;
-                _frequencies[j] = temp_f;
+            if(_frequencies[i] == _frequencies[j] && _URLs[j] > _URLs[i]){
+                urlSwap(i, j);
             }
         }
     }
@@ -332,17 +349,11 @@ void setOfURLs::sortURLs()
     for(int i = 0; i < _size; i++){
         for(int j = 0; j < _size; j++){
             if(_URLs[j] > _URLs[i]){
-                temp_url = _URLs[i];
-                temp_f = _frequencies[i];
-
-                _URLs[i] = _URLs[j];
-                _frequencies[i] = _frequencies[j];
-
-                _URLs[j] = temp_url;
-                _frequencies[j] = temp_f;
+                urlSwap(i, j);
             }
         }
     }
+
 }
 
 setOfURLs* setOfURLs::removeURLs(myString* URLsToFilterOut, int numURLsToFilterOut)
@@ -350,17 +361,22 @@ setOfURLs* setOfURLs::removeURLs(myString* URLsToFilterOut, int numURLsToFilterO
     for(int i = 0; i < numURLsToFilterOut; i ++){
         for(int u = 0; u < _size; u++){
             if(URLsToFilterOut[i] == _URLs[u]){
-                for(int r = u; r < _size+1; r++){
-                    _URLs[r] = _URLs[r+1];
-                    _frequencies[r] = _frequencies[r+1];
-                }
-                _URLs[_size-1].~myString(); // call destructor on final entry in memory.
-                _frequencies[_size-1] = 0;
-                _size--;
+                deleteURL(u);
             }
         }
     }
     return this;
+}
+
+void setOfURLs::deleteURL(int i){
+
+    for(int k = i; i < _size - 1; i ++){
+        _URLs[i] = _URLs[i+1];
+        _frequencies[i] = _frequencies[i+1];
+    }
+
+    decCapacity();
+    
 }
 
 // to search for a given word in _URLs - returns 0 if not found, 1 if found
@@ -389,7 +405,6 @@ int setOfURLs::binarySearchAndInsert (myString& s)
         else if(_URLs[mid] == s){
             // found an existing URL, increment its frequency and return 1.
             _frequencies[mid] ++;
-            cout << "duplicate found" << endl; ////////////////////////////////////////////////////////////////////
             return 1;
         }
     }
@@ -415,8 +430,9 @@ void setOfURLs::addURL(myString & s)
 
 void setOfURLs::incCapacity(){
 
-    myString* tempURL = new myString[_size+1];
-    int* tempF = new int[_size+1];
+    int incSize = _size + 1;
+    myString* tempURL = new myString[incSize];
+    int* tempF = new int[incSize];
 
     for(int i = 0; i < _size; i ++){
         tempURL[i] = _URLs[i];
@@ -435,31 +451,58 @@ void setOfURLs::incCapacity(){
 
 void setOfURLs::decCapacity(){
 
+    _size --;
+    myString* tempURL = new myString[_size];
+    int* tempF = new int[_size];
 
+    for(int i = 0; i < _size; i ++){
+        tempURL[i] = _URLs[i];
+        tempF[i] = _frequencies[i];
+    }
 
+    delete [] _URLs;
+    delete [] _frequencies;
+
+    _URLs = tempURL;
+    _frequencies = tempF;
+}
+
+void setOfURLs::urlSwap(int i, int j){
+    myString temp_url;
+    int temp_f;
+
+    temp_url = _URLs[i];
+    temp_f = _frequencies[i];
+
+    _URLs[i] = _URLs[j];
+    _frequencies[i] = _frequencies[j];
+
+    _URLs[j] = temp_url;
+    _frequencies[j] = temp_f;
 }
 
 
 
 
+// #####################################################################################################################
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+class URLLinksException : public exception {};
 
-
-
-/*
 class URLLinks{
 
-    friend ostream& operator << (ostream& s, URLLinks A);
+    friend ostream& operator << (ostream& s, URLLinks& A);
 
+    private:
+        void resizeNumLinks(int newSize);
+        int filled;
     protected:
         myString URL;
         int numLinks;
         URLLinks** hyperLinks;
-
     public:
         URLLinks();
+        URLLinks(int n);
 	    URLLinks(myString& x, int n);
 	    ~URLLinks();
 	    int getNumLinks();
@@ -468,63 +511,136 @@ class URLLinks{
 	    void addSite(myString& t);
 	    void addNeighbor(URLLinks& link);
 	    void setNeighbors(int nei);
+        URLLinks& operator = (URLLinks& u);
+        URLLinks& operator [] (int i);
 };
 
 ostream& operator << (ostream& s, URLLinks& A)
 {
-	//TODO
+
+    s << A.getURL() << ":" << endl;
+
+    /*
+	s << A.getURL() << ": " << A.getNumLinks() << endl;
+
+    for(int i = 0; i < A.getNumLinks(); i ++){
+        for(int k = 0; k < A.getHyperLink(k)->getNumLinks(); k ++){
+            s << "** " << A.getHyperLink(k)->getURL() << endl;
+        }
+    }*/
+    
+    return s;
 }
 
 URLLinks::URLLinks()
 {
-	//TODO
+	numLinks = 0;
+    filled = 0;
+    URL = *(new myString());
+    hyperLinks = new URLLinks*[0];
 }
 
 URLLinks::URLLinks(myString& x, int n)
 {
-	//TODO
+	URL = x;
+    numLinks = n;
+    filled = 0;
+    hyperLinks = new URLLinks*[n];
 }
 
 myString& URLLinks::getURL()
 {
-	//TODO
+	return URL;
 }
 
 int URLLinks::getNumLinks()
 {
-	//TODO
+	return numLinks;
 }
 
 URLLinks* URLLinks::getHyperLink(int i)
 {
-	//TODO
+	return hyperLinks[i];
 }
 
 URLLinks::~URLLinks()
-{
-	//TODO
+{   
+    numLinks = 0;
+    delete [] hyperLinks;
 }
 
-void URLLinks::addSite(myString& t)
+void URLLinks::addSite(myString & t)
 {
-	//TODO
+    resizeNumLinks(numLinks + 1);
+    hyperLinks[numLinks - 1] = new URLLinks(t, 0);
 }
 
 void URLLinks::setNeighbors(int nei)
 {
-	//TODO
+    resizeNumLinks(nei);
+}
+
+void URLLinks::resizeNumLinks(int newSize){
+
+    // make new expanded array
+	URLLinks ** hyperTemp = new URLLinks*[newSize];
+
+    // if new size is smaller, it cuts off values.
+    if(newSize >= numLinks){
+        for(int i = 0; i < numLinks - 1; i ++){
+            hyperTemp[i] = hyperLinks[i];
+        }
+    }
+    else{
+        for(int i = 0; i < newSize - 1; i ++){
+            hyperTemp[i] = hyperLinks[i];
+        }
+    }
+    
+    numLinks = newSize;
+
+    delete [] hyperLinks;
+    hyperLinks = hyperTemp;
 }
 
 void URLLinks::addNeighbor(URLLinks& link)
-{
-	//TODO
+{   
+    if(filled >= numLinks){
+        int diff = filled - numLinks;
+        resizeNumLinks(numLinks + diff + 1);
+    }
+
+    hyperLinks[filled] = &link;
+    filled ++;
 }
 
 
-*/
+URLLinks& URLLinks::operator = (URLLinks& u){
+    
+    URL = u.getURL();
+    numLinks = u.getNumLinks();
+    resizeNumLinks(numLinks);
+
+    for(int i = 0; i < numLinks; i ++){
+        hyperLinks[i] = u.getHyperLink(i);
+    }
+
+    return *this;
+}
+
+URLLinks& URLLinks::operator [] (int i){
+
+    return *hyperLinks[i];
+
+}
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+// #####################################################################################################################
 
 
 
@@ -560,37 +676,135 @@ int main(){
 		urlString = new myString (url); //create a myString object with the URL
 		(*mySetOfURLs).addURL(*urlString); //add URL to mySetOfURLs
 		url = getNextURL ();
-
-        //cout << "Next URL: " << url << endl; ///////////////////////////////////////////////////////
 	}
 
     // this should display the URL and frequency;
 	// note that becuase you are using binary search and insert the URLs will
 	// be sorted alphabetically
-	cout << endl;
-	cout << "Input display:" << endl;
-	(*mySetOfURLs).display ();
+    {
+        cout << endl;
+        cout << "Input display:" << endl;
+        (*mySetOfURLs).display ();
 
-	(*mySetOfURLs).sortFreq ();
-	cout << endl;
-	cout << "mySetOfURLs - Sorted based on frequency:" << endl;
-	(*mySetOfURLs).display ();
+        (*mySetOfURLs).sortFreq ();
+        cout << endl;
+        cout << "mySetOfURLs - Sorted based on frequency:" << endl;
+        (*mySetOfURLs).display ();
 
-	(*mySetOfURLs).sortURLs();
-	cout << endl;
-	cout << "mySetOfURLs - Sorted alphabetically:" << endl;
-	(*mySetOfURLs).display ();
+        (*mySetOfURLs).sortURLs();
+        cout << endl;
+        cout << "mySetOfURLs - Sorted alphabetically:" << endl;
+        (*mySetOfURLs).display ();
 
-	setOfURLs* newSetOfURLs = (*mySetOfURLs).removeURLs(URLsToFilterOutList, numURLsToFilterOut); // new parameter added here
-	cout << endl;
-	cout << "newSetOfURLs - Sorted alphabetically:" << endl;
-	(*newSetOfURLs).display();
+        setOfURLs* newSetOfURLs = (*mySetOfURLs).removeURLs(URLsToFilterOutList, numURLsToFilterOut); // new parameter added here
+        cout << endl;
+        cout << "newSetOfURLs - Sorted alphabetically:" << endl;
+        (*newSetOfURLs).display();
 
-	(*newSetOfURLs).sortFreq ();
-	cout << endl;
-	cout << "newSetOfURLs - Sorted based on frequency:" << endl;
-	(*newSetOfURLs).display ();
+        (*newSetOfURLs).sortFreq ();
+        cout << endl;
+        cout << "newSetOfURLs - Sorted based on frequency:" << endl;
+        (*newSetOfURLs).display ();
+    }
+	
+
+    cin >> numPages;
+	cout << "Number of websites: " << numPages << endl;
 
 
-    return 0;
+    url = getNextURL (); // prime for new URL;
+	URLLinks* myLinkStructure = new URLLinks[numPages];
+
+    // assign URLs to out URLLinks structure.
+	for (int i = 0; i < numPages-1; i++)
+	{
+		// read all URL and store them in the myLinkStructure array of URLLink objects
+        urlString = new myString (url);
+        myLinkStructure[i] = *(new URLLinks(*urlString, 0));
+//cout << "hyperlinked to myLinkStructure: " << myLinkStructure[i] << endl;
+		url = getNextURL ();
+	}
+
+
+
+
+    // store the neighbours/hyperlinks of just-added URLs
+	for (int i = 0; i < numPages; i++)
+	{
+		cin >> pageNo >> numNeighbors;
+		myLinkStructure[i].setNeighbors(numNeighbors);
+		for (int j = 0; j < numNeighbors; j++)
+		{
+			cin >> neighbor;
+			myLinkStructure[pageNo].addNeighbor((myLinkStructure[neighbor]));
+		}
+	}
+
+
+
+
+
+	cout << "~~~Webpages and the links they contain:" << endl;
+	// display all URLLink objects using the overloaded << operator (see sample output file)
+
+    for(int i = 0; i < numPages; i ++){
+        cout << myLinkStructure[i];
+
+        for(int k = 0; k < myLinkStructure[i].getNumLinks(); k ++){
+            cout <<  "** " << myLinkStructure[i].getHyperLink(k)->getURL() << endl;
+        }
+
+        cout << endl;
+            
+    }
+
+
+
+
+
+	cout << "~~~Webpages and the number and URL of pages that contain links to them:" << endl;
+	// display all the incoming nodes here (see sample output file)
+
+    int count;
+    myString * testSet = new myString[numPages];
+
+    for(int i = 0; i < numPages; i ++){
+
+        count = 0;
+        myString rootURL = myLinkStructure[i].getURL();
+
+        for(int j = 0; j < numPages; j ++){
+
+            for(int k = 0; k < myLinkStructure[j].getNumLinks(); k ++){
+                
+                myString checkURL = myLinkStructure[j].getHyperLink(k)->getURL();
+
+                if(rootURL == checkURL && i != j){
+
+                    testSet[count] = myLinkStructure[j].getURL();
+                    count ++;
+                }
+            }
+        }
+
+        cout << rootURL << ": " << count << endl;
+
+        for(int p = 0; p < count; p ++){
+            cout << "** " << testSet[p] << endl;
+        }
+
+        cout << endl;
+
+    }
+
+	// TODO : destructors
+
+    delete [] testSet;
+	delete [] URLsToFilterOutList;
+	delete mySetOfURLs;
+	delete [] myLinkStructure;
+    delete [] urlString;
+    delete [] url;
+
+	return 0;
 }

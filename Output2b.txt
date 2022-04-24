@@ -1,0 +1,102 @@
+Number of URLs to filter out: 3
+
+Input display:
+mySetOfURLs: 8
+https://www.airbnb.com: 1
+https://www.amazon.com: 3
+https://www.facebook.com: 1
+https://www.google.com: 1
+https://www.nvdia.com:  2
+https://www.tesla.com: 2
+https://www.walmart.com: 1
+https://www.yahoo.com: 1
+
+mySetOfURLs - Sorted based on frequency:
+mySetOfURLs: 8
+https://www.airbnb.com: 1
+https://www.facebook.com: 1
+https://www.google.com: 1
+https://www.walmart.com: 1
+https://www.yahoo.com: 1
+https://www.nvdia.com:  2
+https://www.tesla.com: 2
+https://www.amazon.com: 3
+
+mySetOfURLs - Sorted alphabetically:
+mySetOfURLs: 8
+https://www.airbnb.com: 1
+https://www.amazon.com: 3
+https://www.facebook.com: 1
+https://www.google.com: 1
+https://www.nvdia.com:  2
+https://www.tesla.com: 2
+https://www.walmart.com: 1
+https://www.yahoo.com: 1
+
+newSetOfURLs - Sorted alphabetically:
+newSetOfURLs: 5
+https://www.airbnb.com: 1
+https://www.amazon.com: 3
+https://www.facebook.com: 1
+https://www.nvdia.com:  2
+https://www.tesla.com: 2
+
+newSetOfURLs - Sorted based on frequency:
+newSetOfURLs: 5
+https://www.airbnb.com: 1
+https://www.facebook.com: 1
+https://www.nvdia.com:  2
+https://www.tesla.com: 2
+https://www.amazon.com: 3
+
+Number of webpages: 5
+
+~~~Webpages and the links they contain:
+
+https://www.youtube.com:
+** https://www.twitter.com
+** https://www.pinterest.com
+** https://www.imdb.com
+
+https://www.twitter.com:
+** https://www.youtube.com
+** https://www.reddit.com
+
+https://www.pinterest.com:
+** https://www.twitter.com
+** https://www.imdb.com
+** https://www.reddit.com
+
+https://www.imdb.com
+** https://www.twitter.com
+
+https://www.reddit.com
+** https://www.youtube.com
+** https://www.pinterest.com
+** https://www.imdb.com
+
+~~~Webpages and the number and URL of pages that contain links to them:
+
+https://www.youtube.com: 2
+** https://www.twitter.com
+** https://www.reddit.com
+
+https://www.twitter.com: 3
+** https://www.youtube.com
+** https://www.pinterest.com
+** https://www.imdb.com
+
+https://www.pinterest.com: 2
+** https://www.youtube.com
+** https://www.reddit.com
+
+https://www.imdb.com: 3
+** https://www.youtube.com
+** https://www.pinterest.com
+** https://www.reddit.com
+
+https://www.reddit.com: 2
+** https://www.twitter.com
+** https://www.pinterest.com
+
+

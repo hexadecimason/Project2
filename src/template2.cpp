@@ -90,20 +90,20 @@ int myString::Size () {
 }
 
 // overloading = operator - initialize object with an existing string
-/*myString& myString::operator = (char* B) {
+myString& myString::operator = (char* B) {
 
 	// TODO
 
 	return NULL;
-}*/
+}
 
 // overloading = operator - initialize object with an existing mystring object
-/*myString& myString::operator = (myString& B) {
+myString& myString::operator = (myString& B) {
 
 	// TODO
 
 	return NULL;
-}*/
+}
 
 // checking if two myString objects are the same - return true or false
 bool myString::operator == (myString& B) {
@@ -137,6 +137,7 @@ char* getNextURL () {
 	char c;
 	int i = 0;
 	//read until the next white space or line-break 
+	//modify the following line of code, so that the function returns only the URLs (i.e., it ignores everything that does not start with http:// or https:// )
 	while (!cin.eof()) {
 		cin.get(c);
 		if (!cin.eof ()) {
@@ -153,19 +154,13 @@ char* getNextURL () {
 				return str;
 		}
 	}
-	//modify the following line of code, so that the function returns only the URLs (i.e., it ignores everything that does not start with http:// or https:// )
 	if (i > 0) return str;
 	else return NULL;
 }
 
 
 
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-
 class setOfURLs {
 private:
 	int binarySearchAndInsert (myString& u);
@@ -271,92 +266,92 @@ void setOfURLs::addURL(myString & newWord)
 	// TODO
 }
 
-
-
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
 
 class URLLinks {
 
 	friend ostream& operator << (ostream& s, URLLinks& A);
+
 protected:
 	myString URL;
 	int numLinks;
 	URLLinks** hyperLinks;
+
 public:
 	URLLinks();
 	URLLinks(myString& x, int n);
 	~URLLinks();
+
 	int getNumLinks();
 	URLLinks* getHyperLink(int i);
 	myString& getURL();
+
 	void addSite(myString& t);
 	void addNeighbor(URLLinks& link);
 	void setNeighbors(int nei);
 };
 
+//add the information about URL A to the output stream s 
 ostream& operator << (ostream& s, URLLinks& A)
 {
 	//TODO
 }
 
+//create an empty URLLinks object
 URLLinks::URLLinks()
 {
 	//TODO
 }
 
+//create a URLLinks object for URL x with n neighbors
 URLLinks::URLLinks(myString& x, int n)
 {
 	//TODO
 }
 
+//return the URL
 myString& URLLinks::getURL()
 {
 	//TODO
 }
 
+//returm the number of links
 int URLLinks::getNumLinks()
 {
 	//TODO
 }
 
+//return a URLLinks object
 URLLinks* URLLinks::getHyperLink(int i)
 {
 	//TODO
 }
 
+//destructor fot the URLLinks class
 URLLinks::~URLLinks()
 {
 	//TODO
 }
 
+//add t as the URL 
 void URLLinks::addSite(myString& t)
 {
 	//TODO
 }
 
+//store the number of neighboring URLs of the specific URL, and create the space needed to store them in the future
 void URLLinks::setNeighbors(int nei)
 {
 	//TODO
 }
 
+//store the neighboring URLs of the specific URL
 void URLLinks::addNeighbor(URLLinks& link)
 {
 	//TODO
 }
 
-
-
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-
-
 int main () {
 
 	int numURLsToFilterOut;
@@ -368,12 +363,12 @@ int main () {
 	int neighbor;
 
 
-    //read the first number from the file that contains the number of stop words
+    //read the first number from the file that contains the number of URLs that have to be filtered out
 	cin >> numURLsToFilterOut;
-	cout << "Number of Stop words: " << numURLsToFilterOut << endl;
+	cout << "Number of URLs to filter out: " << numURLsToFilterOut << endl;
 	myString* URLsToFilterOutList = new myString[numURLsToFilterOut];
 
-	//read the stop words
+	//read the URLs that have to be filtered out
 	for (int i=0; i < numURLsToFilterOut; i++)
 	{
 		url = getNextURL ();
@@ -383,18 +378,17 @@ int main () {
 	//Now read a text and put them in the setOfURLs instance.
 	setOfURLs* mySetOfURLs = new setOfURLs ();
 
-	url = getNextURL (); 
+	url = getNextURL (); //first read the next URL as an array of characters
 
 	while (url != NULL)
 	{
-		urlString = new myString (url); //create a myString object with the URL
+		urlString = new myString (url); //create a myString object with the URL just read
 		(*mySetOfURLs).addURL(*urlString); //add URL to mySetOfURLs
 		url = getNextURL ();
 	}
 
-	// this should display the URL and frequency;
-	// note that becuase you are using binary search and insert the URLs will
-	// be sorted alphabetically
+	// this should display each URL along with its frequency;
+	// note that because you are using binary search and insert, the URLs will be sorted alphabetically
 	cout << endl;
 	cout << "Input display:" << endl;
 	(*mySetOfURLs).display ();
@@ -409,7 +403,7 @@ int main () {
 	cout << "mySetOfURLs - Sorted alphabetically:" << endl;
 	(*mySetOfURLs).display ();
 
-	setOfURLs* newSetOfURLs = (*mySetOfURLs).removeURLs(URLsToFilterOutList, numURLsToFilterOut); // new parameter added here
+	setOfURLs* newSetOfURLs = (*mySetOfURLs).removeURLs(URLsToFilterOutList, numURLsToFilterOut); 
 	cout << endl;
 	cout << "newSetOfURLs - Sorted alphabetically:" << endl;
 	(*newSetOfURLs).display();
@@ -421,12 +415,12 @@ int main () {
 
 
 	cin >> numPages;
-	cout << "Number of websites: " << numPages << endl;
+	cout << "Number of webpages: " << numPages << endl;
 
 	URLLinks* myLinkStructure = new URLLinks[numPages];
 	for (int i = 0; i < numPages; i++)
 	{
-		// read all URL and store them in the myLinkStructure array of URLLink objects
+		// read all URLs and store them in the myLinkStructure array of URLLink objects
 	}
 
 	// store the neighbours/hyperlinks
@@ -441,14 +435,16 @@ int main () {
 		}
 	}
 
-	// display all URLLink objects using the overloaded << operator
 
-	cout << "~~~~~Webpages contained as hyperLinks:" << endl;
-	// display all the incoming nodes here
+	cout << "~~~Webpages and the links they contain:" << endl;
+	// display all URLLink objects using the overloaded << operator (see sample output file)
+
+	cout << "~~~Webpages and the number and URL of pages that contain links to them:" << endl;
+	// display all the incoming nodes here (see sample output file)
 
 
 
-	// TODO : destructors
+	// TODO : implement the destructors
 	// delete [] URLsToFilterOutList;
 	// delete mySetOfURLs;
 	// delete newSetOfURLs;
