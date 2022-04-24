@@ -22,32 +22,31 @@ int stringLength (char* A) {
 	return size; //size is the last index position
 }
 
-
-
 // #####################################################################################################################
 
 /*
-
+    myString is, in escence, a 'string' class. It is based on a char* to hold letters with a 'size' member.
+    It contains getter methods for the array, its size, and several overloaded operators.
 */
 
 class myString{
     friend ostream& operator << (ostream& s, myString& A);
 
     protected:
-        char* strArray;
+        char* strArray; // char array holds the string
         int size;
         void strCpy(char* A, char* B, int n);
     public:
         myString();
         myString(char* inputString);
         myString(myString& s);
-        int Size();
-        char* getWord();
+        int Size(); // getter for size
+        char* getWord(); // getter for strArray
         bool operator == (myString& s);
         bool operator > (myString& s);
         bool operator < (myString& s);
         myString& operator = (myString& s);
-        myString& operator = (char* s);
+        myString& operator = (char* s); // additional assignment operator.
 };
 
 // outputs a given string A
@@ -81,6 +80,11 @@ myString::myString (myString& B) {
 	strArray = new char[size];
 	emptyString(strArray, size+1);
 	stringCopy (B.strArray, size, strArray);
+}
+
+// Another copy method. Copies B into A.
+void strCpy(char* A, char* B, int n){
+    stringCopy(B, n, A);
 }
 
 // returns the array containing the characters of the myString() instance.
@@ -171,11 +175,9 @@ myString& myString::operator = (char* s){
     return *this;
 }
 
-
-
 // #####################################################################################################################
 
-
+// given an array of characters, determines if it has the prefix of a legitimate URL or if it could be unsafe.
 bool isValidURL(char* s, int size){
     bool tag = true;
     string tag1 = "http://";
@@ -216,52 +218,44 @@ char* getNextURL () {
 					 (c >= ':') || (c >= '/') || (c >= '.') || (c >= '_'))
 					str[i++] = c;
 			}
+            // if we reach a newline or white space, it is either valid and returned or another call is made.
 			else if ((c == '\n' || c == ' ') && (i > 0)){
                 if(isValidURL(str, i))
 				    return str;
                 else return getNextURL();
-            }/*
-			else if ((c == ' ') && (i > 0)){
-                if(isValidURL(str, i))
-				    return str;
-                else return getNextURL();
-            }*/
+            }
 		}
 	}
 	return NULL;
 }
 
+// #####################################################################################################################
 
-
-
-
-
-class setOfURLsException : public exception{};
+/*
+    SetOfURLs acts as a pair of sorted vectors: one for URLs and another for their frequency of appearance.
+    Sorting occurs based on either ASCII value or frequency; both vectors are sorted simultaneously, leaving their indexes matched 1:1.
+    The class also contains various methods for getting member information from and modifying each instance.
+*/
 
 class setOfURLs{
 
     private:
         int binarySearchAndInsert(myString& s);
         void deleteURL(int i);
-        void incCapacity();
-        void decCapacity();
+        void incCapacity(); // increments array capacity +1
+        void decCapacity(); // decrements array capacity -1
         void urlSwap(int i, int j);
-    
     protected:
         myString* _URLs;
         int* _frequencies;
         int _size;
-    
     public:
         setOfURLs();
         setOfURLs(int numWords);
-
         myString* get_Words(); // pointer to an array of myString objects
-        int* get_Freq();
-        int get_size();
-
-        void setSize(int i);
-
+        int* get_Freq(); // getter for _frequencies
+        int get_size(); // getter for _size
+        void setSize(int i); // sets size and changes capacity to match
         void addURL(myString& s); // insert new myString into array, maintaining order
         void sortFreq(); // sort URLs based on their frequency
         void sortURLs(); // sort _URLs alphabetically
@@ -278,7 +272,7 @@ setOfURLs::setOfURLs()
 	_frequencies = new int[0];
 }
 
-// non default constructor - initializes with a known number of words
+// non-default constructor - initializes with a known number of words
 setOfURLs::setOfURLs (int numOfWords)
 {
 	_size = numOfWords;
@@ -293,26 +287,40 @@ setOfURLs::~setOfURLs(){
     _size = 0;
 }
 
+// returns a pointer to the array of URLs
 myString* setOfURLs::get_Words()
 {
 	return _URLs;
 }
 
+// returns a pointer to the array of URL frequencies
 int* setOfURLs::get_Freq()
 {
 	return _frequencies;
 }
 
+// gets the size of the arrays.
 int setOfURLs::get_size()
 {
 	return _size;
 }
 
+// Changes the size dynamically by either incrementally increasing or decreasing. Incrementing or decrementing is the more common way to change size, as an instance of SetOfURLs is added to gradually.
 void setOfURLs::setSize(int i)
 {
-	_size = i;
+    int diff = _size - i;
+
+    for(int k = 0; k < diff; k++){
+        if(diff > 0)
+            decCapacity();
+        else if(diff < 0)
+            incCapacity();
+    }
+
+    _size = i;
 }
 
+// a method for displaying the set of URLs as a single item of text.
 void setOfURLs::display()
 {
     cout << "mySetOfURLs: " << _size << endl;
@@ -356,8 +364,8 @@ void setOfURLs::sortURLs()
 
 }
 
-setOfURLs* setOfURLs::removeURLs(myString* URLsToFilterOut, int numURLsToFilterOut)
-{
+// removes one or many URLs at once by identifying matches and making multiple deleteURL calls.
+setOfURLs* setOfURLs::removeURLs(myString* URLsToFilterOut, int numURLsToFilterOut) {
     for(int i = 0; i < numURLsToFilterOut; i ++){
         for(int u = 0; u < _size; u++){
             if(URLsToFilterOut[i] == _URLs[u]){
@@ -368,6 +376,7 @@ setOfURLs* setOfURLs::removeURLs(myString* URLsToFilterOut, int numURLsToFilterO
     return this;
 }
 
+// deletes a single URL from a known index.
 void setOfURLs::deleteURL(int i){
 
     for(int k = i; i < _size - 1; i ++){
@@ -376,7 +385,6 @@ void setOfURLs::deleteURL(int i){
     }
 
     decCapacity();
-    
 }
 
 // to search for a given word in _URLs - returns 0 if not found, 1 if found
@@ -409,6 +417,7 @@ int setOfURLs::binarySearchAndInsert (myString& s)
         }
     }
 
+    // SECOND: value doesn't exist, so we must add it.
     incCapacity();
     for(int i = _size - 1; i > mid; i --){
         _frequencies[i] = _frequencies[i-1];
@@ -428,6 +437,7 @@ void setOfURLs::addURL(myString & s)
 	binarySearchAndInsert(s);
 }
 
+// increases the capacities of both member arrays by 1, as adding and removing both happen one item at a time.
 void setOfURLs::incCapacity(){
 
     int incSize = _size + 1;
@@ -449,6 +459,7 @@ void setOfURLs::incCapacity(){
     _size ++;
 }
 
+// decreases the capacities of both member arrays by 1, as adding and removing both happen one item at a time.
 void setOfURLs::decCapacity(){
 
     _size --;
@@ -467,6 +478,7 @@ void setOfURLs::decCapacity(){
     _frequencies = tempF;
 }
 
+// switches locations of array entries, used in sorting.
 void setOfURLs::urlSwap(int i, int j){
     myString temp_url;
     int temp_f;
@@ -481,57 +493,46 @@ void setOfURLs::urlSwap(int i, int j){
     _frequencies[j] = temp_f;
 }
 
-
-
-
 // #####################################################################################################################
 
-
-class URLLinksException : public exception {};
+/*
+    URLLinks acts as a case of a generalized linked list.
+    Each individual URLLinks object is represented by a single myString and an array linking it to other instances of URLLinks.
+*/
 
 class URLLinks{
 
     friend ostream& operator << (ostream& s, URLLinks& A);
 
     private:
-        void resizeNumLinks(int newSize);
-        int filled;
+        void resizeNumLinks(int newSize); // resizes hyperLinks to a chosen size
+        int filled; // tracks how many spaces in hyperLinks have been filled vs how many spaces have only been allocated
     protected:
-        myString URL;
-        int numLinks;
-        URLLinks** hyperLinks;
+        myString URL; // this nodes URL
+        int numLinks; // number of links to other URLs
+        URLLinks** hyperLinks; // an array containing pointers to other linked URLLinks objects
     public:
         URLLinks();
-        URLLinks(int n);
-	    URLLinks(myString& x, int n);
+        URLLinks(int n); // constructor for a known number of links and a URL to be assigned later
+	    URLLinks(myString& x, int n); // constructor with a known URL and known number of linkas to be assigned later
 	    ~URLLinks();
-	    int getNumLinks();
-	    URLLinks* getHyperLink(int i);
-	    myString& getURL();
-	    void addSite(myString& t);
-	    void addNeighbor(URLLinks& link);
-	    void setNeighbors(int nei);
-        URLLinks& operator = (URLLinks& u);
-        URLLinks& operator [] (int i);
+	    int getNumLinks(); // getter for number of hyperlinks
+	    URLLinks* getHyperLink(int i); // returns the linked object at a given index
+	    myString& getURL(); // getter for the URL in this node
+	    void addSite(myString& t); // adds a new hyperlink, constructing it from a myString object
+	    void addNeighbor(URLLinks& link); // adds a new hyperlink given the link itself
+	    void setNeighbors(int nei); // sets the number of hyperlinks, resizing the pointer array as required
+        URLLinks& operator = (URLLinks& u); 
 };
 
+// overridden << operator
 ostream& operator << (ostream& s, URLLinks& A)
 {
-
     s << A.getURL() << ":" << endl;
-
-    /*
-	s << A.getURL() << ": " << A.getNumLinks() << endl;
-
-    for(int i = 0; i < A.getNumLinks(); i ++){
-        for(int k = 0; k < A.getHyperLink(k)->getNumLinks(); k ++){
-            s << "** " << A.getHyperLink(k)->getURL() << endl;
-        }
-    }*/
-    
     return s;
 }
 
+// default constructor sets values to 0, and instatiates an empty myString for URL
 URLLinks::URLLinks()
 {
 	numLinks = 0;
@@ -540,6 +541,7 @@ URLLinks::URLLinks()
     hyperLinks = new URLLinks*[0];
 }
 
+// other constructor sets both a URL and a known number of linked members
 URLLinks::URLLinks(myString& x, int n)
 {
 	URL = x;
@@ -548,38 +550,46 @@ URLLinks::URLLinks(myString& x, int n)
     hyperLinks = new URLLinks*[n];
 }
 
+// returns the URL
 myString& URLLinks::getURL()
 {
 	return URL;
 }
 
+// returns the number of links that this URL links to
 int URLLinks::getNumLinks()
 {
 	return numLinks;
 }
 
+// returns a linked URL of a specific index
 URLLinks* URLLinks::getHyperLink(int i)
 {
 	return hyperLinks[i];
 }
 
+// destructor
 URLLinks::~URLLinks()
 {   
     numLinks = 0;
+    filled = 0;
     delete [] hyperLinks;
 }
 
+// adds a hyperlink given a myString reference: uses it to instantiate a new node
 void URLLinks::addSite(myString & t)
 {
     resizeNumLinks(numLinks + 1);
     hyperLinks[numLinks - 1] = new URLLinks(t, 0);
 }
 
+// sets the number of other nodes linked to by this one
 void URLLinks::setNeighbors(int nei)
 {
     resizeNumLinks(nei);
 }
 
+// resizes the array: this method is used by the others that add to or modify the pointer array.
 void URLLinks::resizeNumLinks(int newSize){
 
     // make new expanded array
@@ -603,6 +613,7 @@ void URLLinks::resizeNumLinks(int newSize){
     hyperLinks = hyperTemp;
 }
 
+// adds a hyperlink given another URLLinks object
 void URLLinks::addNeighbor(URLLinks& link)
 {   
     if(filled >= numLinks){
@@ -614,7 +625,7 @@ void URLLinks::addNeighbor(URLLinks& link)
     filled ++;
 }
 
-
+// overridden assignment operator
 URLLinks& URLLinks::operator = (URLLinks& u){
     
     URL = u.getURL();
@@ -628,22 +639,7 @@ URLLinks& URLLinks::operator = (URLLinks& u){
     return *this;
 }
 
-URLLinks& URLLinks::operator [] (int i){
-
-    return *hyperLinks[i];
-
-}
-
-
-
-
-
-
-
 // #####################################################################################################################
-
-
-
 
 int main(){
 
@@ -709,6 +705,7 @@ int main(){
 	
 
     cin >> numPages;
+    cout << endl;
 	cout << "Number of websites: " << numPages << endl;
 
 
